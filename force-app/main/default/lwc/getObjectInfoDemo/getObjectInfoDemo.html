@@ -1,0 +1,19 @@
+<template>
+  <lightning-card title="Get Object Info Demo">
+    <template lwc:if={accObjInfo}>
+      <div class="slds-p-around_small">
+        <p>Account API Name: {accObjInfo.apiName}</p>
+        <p>Account Label: {accObjInfo.labelPlural}</p>
+      </div>
+      <div class="slds-p-left_small">
+        <p>Relationships of Account</p>
+        <template for:each={accObjInfo.childRelationships} for:item="rel">
+          <p key={rel.childObjectApiName}>{rel.childObjectApiName}</p>
+        </template>
+      </div>
+    </template>
+    <template lwc:elseif={errors}>
+      <c-error-panel errors={errors}></c-error-panel>
+    </template>
+  </lightning-card>
+</template>
