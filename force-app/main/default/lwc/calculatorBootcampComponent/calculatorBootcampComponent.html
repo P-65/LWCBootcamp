@@ -1,0 +1,52 @@
+<template>
+  <lightning-card title="Calculator" icon-name="custom:custom24">
+    <div class="slds-p-left_medium slds-p-right_medium">
+      <!-- inputs -->
+      <lightning-input
+        label="Number 1"
+        name="number1"
+        placeholder="Enter Number 1"
+        value={numberone}
+        onchange={handleChange}
+      ></lightning-input>
+      <lightning-input
+        label="Number 2"
+        name="number2"
+        placeholder="Enter Number 2"
+        value={numbertwo}
+        onchange={handleChange}
+      ></lightning-input>
+    </div>
+    <div class="slds-p-left_medium slds-m-top_medium">
+      <!-- buttons -->
+      <lightning-button
+        variant="brand"
+        label="Add"
+        onclick={calculateInputs}
+      ></lightning-button>
+      <lightning-button
+        variant="brand"
+        label="Sub"
+        onclick={calculateInputs}
+        class="slds-p-left_small"
+      ></lightning-button>
+      <lightning-button
+        variant="brand"
+        label="Mul"
+        onclick={calculateInputs}
+        class="slds-p-left_small"
+      ></lightning-button>
+      <lightning-button
+        variant="brand"
+        label="Div"
+        onclick={calculateInputs}
+        class="slds-p-left_small"
+      ></lightning-button>
+    </div>
+    <template lwc:if={displayOutput}>
+      <div class="slds-p-left_medium slds-m-top_medium">
+        <p>Output : {result}</p>
+      </div>
+    </template>
+  </lightning-card>
+</template>

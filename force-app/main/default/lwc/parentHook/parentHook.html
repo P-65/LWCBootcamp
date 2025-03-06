@@ -1,0 +1,14 @@
+<template>
+  <lightning-card title="Lifecycle Hooks Demo">
+    <lightning-input
+      type="checkbox"
+      label="Display Child"
+      onchange={changeHandler}
+      class="slds-p-around_small"
+    >
+    </lightning-input>
+    <template lwc:if={displayChild}>
+      <c-child-hook></c-child-hook>
+    </template>
+  </lightning-card>
+</template>

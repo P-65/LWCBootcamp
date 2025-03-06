@@ -1,0 +1,11 @@
+@import "c/cssLibrary";
+
+.bgclass {
+  background-color: var(--c-custombackground);
+}
+
+.btnbg {
+  --slds-c-button-brand-color-background: var(--c-custombackground);
+  --slds-c-button-brand-color-background-active: var(--c-custombackground);
+  --slds-c-button-brand-color-background-hover: red;
+}

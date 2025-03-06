@@ -1,0 +1,26 @@
+<template>
+  <lightning-card title="Track With Nested Object Private Property">
+    <p class="slds-p-left_x-small">{myDetails.fname}</p>
+    <div class="slds-p-left_x-small">
+      <lightning-button
+        label="Change Text"
+        variant="brand"
+        onclick={handleClick}
+      ></lightning-button>
+    </div>
+    <div class="slds-p-left_x-small">
+      <lightning-button
+        label="Add Task"
+        variant="brand"
+        onclick={addTaskHandler}
+      ></lightning-button>
+    </div>
+    <div class="slds-p-left_x-small">
+      <lightning-button
+        label="Refresh Data"
+        variant="brand"
+        onclick={refreshHandler}
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

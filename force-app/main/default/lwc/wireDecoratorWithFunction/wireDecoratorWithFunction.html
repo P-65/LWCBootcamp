@@ -1,0 +1,13 @@
+<template>
+  <lightning-card title="Wire Decorator With Function">
+    <template lwc:if={accounts}>
+      <div style="height: 300px">
+        <lightning-datatable key-field="id" data={accounts} columns={columns}>
+        </lightning-datatable>
+      </div>
+    </template>
+    <template lwc:elseif={errors}>
+      <c-error-panel errors={errors}></c-error-panel>
+    </template>
+  </lightning-card>
+</template>

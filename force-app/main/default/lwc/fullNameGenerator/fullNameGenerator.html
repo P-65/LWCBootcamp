@@ -1,0 +1,30 @@
+<template>
+  <lightning-card title="FullName Generator" icon-name="custom:custom15">
+    <div class="slds-p-left_medium slds-p-right_medium">
+      <!-- inputs -->
+      <lightning-input
+        label="First Name"
+        placeholder="Enter First Name..."
+        name="name1"
+        onchange={changeHandler}
+      ></lightning-input>
+      <lightning-input
+        label="Last Name"
+        placeholder="Enter Last Name..."
+        name="name2"
+        onchange={changeHandler}
+      ></lightning-input>
+    </div>
+    <div class="slds-m-top_small slds-align_absolute-center">
+      <!-- button -->
+      <lightning-button
+        variant="brand"
+        label="Generate Full Name"
+        onclick={handleClick}
+      ></lightning-button>
+    </div>
+    <div class="slds-p-left_medium">
+      <p>Output : {fullName}</p>
+    </div>
+  </lightning-card>
+</template>
