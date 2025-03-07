@@ -1,4 +1,8 @@
-import { getObjectInfo, getPicklistValues } from "lightning/uiObjectInfoApi";
+import {
+  getObjectInfo,
+  getPicklistValues,
+  getPicklistValuesByRecordType
+} from "lightning/uiObjectInfoApi";
 import { LightningElement, wire } from "lwc";
 import ACCOUNT_OBJECT from "@salesforce/schema/Account";
 import ACCOUNT_INDUSTRY from "@salesforce/schema/Account.Industry";
@@ -33,6 +37,20 @@ export default class GetPicklistDemo extends LightningElement {
       console.log("Error", error);
     }
   }
+
+  @wire(getPicklistValuesByRecordType, {
+    objectApiName: ACCOUNT_OBJECT,
+    recordTypeId: "$accProp.data.defaultRecordTypeId"
+  })
+  accRecPicklistValues;
+  // accRecPicklistValues({ data, error }) {
+  //   if (data) {
+  //     console.log("accRecPicklistValues", data);
+  //   } else if (error) {
+  //     console.log(" accRecPicklistValues error", error);
+  //   }
+  // }
+
   handleChange(event) {
     this.value = event.target.value;
   }

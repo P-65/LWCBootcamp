@@ -1,0 +1,14 @@
+<template>
+  <lightning-card title="Custom Event Demo">
+    <template lwc:if={displayMessage}>
+      <p class="slds-p-around_small">
+        Displaying the message after the signal from child component.
+      </p></template
+    >
+    <div class="slds-p-around_small">
+      <c-child-custom-event-demo
+        ondisplaymsg={displayMessageHandler}
+      ></c-child-custom-event-demo>
+    </div>
+  </lightning-card>
+</template>

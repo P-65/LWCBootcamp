@@ -1,15 +1,37 @@
 <template>
   <lightning-card title="Picklist Demo" icon-name="standard:account">
-    <lightning-combobox
-      name="progress"
-      label="Industry"
-      value={value}
-      placeholder="Select Industry"
-      options={industrypicklistValues}
-      onchange={handleChange}
-      class="slds-p-around_small"
-    ></lightning-combobox>
+    <template lwc:if={industrypicklistValues}>
+      <lightning-combobox
+        name="progress"
+        label="Industry"
+        value={value}
+        placeholder="Select Industry"
+        options={industrypicklistValues}
+        onchange={handleChange}
+        class="slds-p-around_small"
+      ></lightning-combobox>
 
-    <p>Selected value is: {value}</p></lightning-card
+      <p>Selected value is: {value}</p></template
+    ></lightning-card
   >
+  <lightning-card
+    title="Get Picklist by RecordType Demo"
+    icon-name="standard:account"
+  >
+    <template lwc:if={accRecPicklistValues.data}>
+      <lightning-combobox
+        name="rating"
+        label="Rating"
+        placeholder="Select Rating"
+        options={accRecPicklistValues.data.picklistFieldValues.Rating.values}
+        class="slds-p-around_small"
+      ></lightning-combobox>
+      <lightning-combobox
+        name="Priority"
+        label="Priority"
+        placeholder="Select Priority"
+        options={accRecPicklistValues.data.picklistFieldValues.CustomerPriority__c.values}
+        class="slds-p-around_small"
+      ></lightning-combobox></template
+  ></lightning-card>
 </template>
