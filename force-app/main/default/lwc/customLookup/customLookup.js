@@ -48,6 +48,7 @@ export default class CustomLookup extends LightningElement {
     };
     console.log("this.selectedRecord", this.selectedRecord);
     this.displayOptions = false;
+    this.sendSelection();
   }
 
   removalSelectionHandler() {
@@ -56,5 +57,13 @@ export default class CustomLookup extends LightningElement {
       selectedName: ""
     };
     this.displayOptions = false;
+    this.sendSelection();
+  }
+
+  sendSelection() {
+    let selectionEvent = new CustomEvent("selectionrec", {
+      detail: this.selectedRecord.selectedId
+    });
+    this.dispatchEvent(selectionEvent);
   }
 }
