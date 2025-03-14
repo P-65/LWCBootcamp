@@ -7,4 +7,14 @@ public with sharing class AccountHelper {
       WITH USER_MODE
     ];
   }
+
+  @AuraEnabled(cacheable=true)
+  public static List<Account> getParentAccounts() {
+    return [
+      SELECT id, name, industry, rating
+      FROM account
+      WHERE AnnualRevenue != NULL
+      WITH USER_MODE
+    ];
+  }
 }
