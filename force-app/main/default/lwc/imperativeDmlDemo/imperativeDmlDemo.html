@@ -1,0 +1,21 @@
+<template>
+  <lightning-card title="Update Ticker Symbol">
+    <div class="slds-p-around_small">
+      <lightning-input label="Account Name" read-only="true" value={accname}>
+      </lightning-input>
+      <lightning-input
+        label="Ticker Symbol"
+        value={accticker}
+        onchange={handleChange}
+      >
+      </lightning-input>
+    </div>
+    <div class="slds-p-around_small">
+      <lightning-button
+        variant="brand"
+        label="Update Account"
+        onclick={clickHandler}
+      ></lightning-button>
+    </div>
+  </lightning-card>
+</template>

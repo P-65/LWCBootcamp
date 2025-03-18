@@ -1,0 +1,34 @@
+<template>
+  <lightning-card title="Imperative Apex Demo">
+    <div class="slds-p-around_small">
+      <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+          <template lwc:if={industryPicklist.data}>
+            <lightning-combobox
+              label="Account Industry"
+              placeholder="Select Industry"
+              options={industryPicklist.data.values}
+              onchange={handleChange}
+            ></lightning-combobox>
+          </template>
+        </div>
+        <div class="slds-col">
+          <lightning-button
+            label="Get Accounts"
+            variant="brand"
+            onclick={clickHandler}
+            disabled={displayButton}
+          ></lightning-button>
+        </div>
+      </div>
+    </div>
+    <template lwc:if={accounts}>
+      <div class="slds-p-around_small">
+        <div style="height: 300px">
+          <lightning-datatable key-field="id" data={accounts} columns={columns}>
+          </lightning-datatable>
+        </div>
+      </div>
+    </template>
+  </lightning-card>
+</template>
