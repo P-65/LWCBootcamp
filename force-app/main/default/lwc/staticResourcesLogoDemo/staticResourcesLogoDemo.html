@@ -1,0 +1,45 @@
+<template>
+  <lightning-card title="Third Part JS">
+    <div class="slds-m-around_small">
+      <p class="slds-text-heading_medium">{displayDate}</p>
+    </div>
+  </lightning-card>
+  <lightning-card title="Third Part CSS">
+    <div class="slds-m-around_small">
+      <p class="slds-text-heading_medium animate__bounceIn animate__delay-5s">
+        {name}
+      </p>
+    </div>
+  </lightning-card>
+  <lightning-card title="Custom Permission">
+    <div class="slds-m-around_small">
+      <template lwc:if={checkPermission}>
+        <p>You are authorized to view the message</p>
+      </template>
+      <template lwc:else>
+        <p>You are not authorized to view the message</p>
+      </template>
+    </div>
+  </lightning-card>
+  <lightning-card title="Logged In User Details">
+    <div class="slds-m-around_small">
+      <p class="slds-text-heading_medium">{name}</p>
+    </div>
+  </lightning-card>
+  <lightning-card title="Custom Labels Demo">
+    <div class="slds-m-around_small">
+      <p class="slds-text-heading_medium">{label.greeting}</p>
+      <p class="slds-text-heading_medium">{label.salesforceplatform}</p>
+    </div>
+  </lightning-card>
+  <lightning-card title="Asset Resources Demo">
+    <div class="slds-m-around_small">
+      <img src={myassetImage} />
+    </div>
+  </lightning-card>
+  <lightning-card title="Static Resources Demo">
+    <div class="slds-m-around_small">
+      <img src={myLogo} />
+    </div>
+  </lightning-card>
+</template>
