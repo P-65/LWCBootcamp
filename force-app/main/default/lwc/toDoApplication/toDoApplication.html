@@ -50,11 +50,11 @@
             for:index="index"
           >
             <div
-              key={currenttask.taskname}
+              key={currenttask.taskId}
               class="slds-box slds-theme_shade incompletebg"
               draggable="true"
               ondragstart={dragStartHandler}
-              data-item={index}
+              data-item={currenttask.taskId}
             >
               <div class="slds-grid slds-wrap">
                 <div class="slds-col slds-size_8-of-12">
@@ -76,7 +76,7 @@
                     class="slds-m-left_xx-small"
                     title="Delete"
                     onclick={removalHandler}
-                    name={index}
+                    name={currenttask.taskId}
                   ></lightning-button-icon>
                   <lightning-button-icon
                     icon-name="utility:check"
@@ -84,7 +84,7 @@
                     class="slds-m-left_xx-small"
                     title="Check"
                     onclick={addToCompleteTaskHandler}
-                    name={index}
+                    name={currenttask.taskId}
                   ></lightning-button-icon>
                 </div>
               </div>
@@ -102,7 +102,7 @@
         >
           <template for:each={completedTasks} for:item="currentitem">
             <div
-              key={currentitem.taskname}
+              key={currentitem.taskId}
               class="slds-box slds-theme_shade completebg"
             >
               <p class="formattaskname">{currentitem.taskname}</p>
